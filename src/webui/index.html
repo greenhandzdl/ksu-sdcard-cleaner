@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SDCard Cleaner Log</title>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>SDCard Cleaner 日志</h1>
+    <p>最新清理日志（自动每30秒刷新）：</p>
+    <pre id="log">Loading log content...</pre>
+    <script>
+        function fetchLog() {
+            fetch('/data/adb/modules/cleaner/logs/latest.log')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('log').textContent = data;
+                })
+                .catch(error => {
+                    document.getElementById('log').textContent = '无法加载日志文件';
+                    console.error('Error fetching log:', error);
+                });
+        }
+        // 初始加载
+        fetchLog();
+        // 每30秒刷新
+        setInterval(fetchLog, 30000);
+    </script>
+</body>
+</html>

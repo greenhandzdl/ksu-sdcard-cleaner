@@ -1,6 +1,16 @@
 # Gradle files
 .gradle/
 build/
+*.log
+*.zip
+
+# 忽略macOS系统文件
+.DS_Store
+__MACOSX/
+
+# 忽略临时文件
+*.tmp
+*.swp
 
 # Local configuration file (sdk path, etc)
 local.properties

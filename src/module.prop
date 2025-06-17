@@ -1,0 +1,5 @@
+name=SDCard Cleaner
+version=1.0
+versionCode=1
+author=greenhandzdl
+description=A KernelSU module to clean up non-standard directories in /sdcard
