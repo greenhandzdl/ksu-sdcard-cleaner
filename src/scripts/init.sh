@@ -1,12 +1,12 @@
 #!/system/bin/sh
 
-# 启动crond服务
-crond -b -c /data/adb/modules/cleaner/
+# 启动crond服务（使用更兼容的参数）
+crond -b -l 2 -c /data/adb/modules/cleaner/
 
 # 检查并重启crond
 if ! pgrep -x "crond" > /dev/null; then
-    crond -b -c /data/adb/modules/cleaner/
-f
+    crond -b -l 2 -c /data/adb/modules/cleaner/
+fi
 
 MODDIR=${0%/*}
 CONFIG="$MODDIR/config.toml"

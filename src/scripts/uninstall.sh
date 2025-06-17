@@ -14,3 +14,6 @@ rm -f /data/adb/modules/cleaner/crontab
 
 # 清理crond状态
 rm -f /data/adb/modules/cleaner/cron.db
+
+# 清理webui相关文件
+rm -rf /data/adb/modules/cleaner/webui

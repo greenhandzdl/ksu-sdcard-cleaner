@@ -16,7 +16,7 @@ ALL_DIRS=$(ls $SDCARD | grep -v "^\.$" | grep -v "^\.\.$")
 
 # 执行清理
 for dir in $ALL_DIRS; do
-    if ! echo "$WHITELIST" | grep -q "$dir$"; then
+    if ! echo "$WHITELIST" | grep -qw "$dir"; then
         rm -rf "$SDCARD/$dir"
         echo "[INFO] Removed directory: $dir" >> $LOGFILE
     fi

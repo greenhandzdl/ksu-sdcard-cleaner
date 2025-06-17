@@ -7,9 +7,11 @@ mkdir -p /data/adb/modules/cleaner/logs
 # 复制配置文件
 cp $MODDIR/config.toml /data/adb/modules/cleaner/config.toml
 
-# 设置定时任务
+# 设置定时任务（直接写入模块目录）
 echo "0 * * * * /data/adb/modules/cleaner/cleaner.sh" > /data/adb/modules/cleaner/crontab
 
 # 安装清理脚本
-cp $MODDIR/cleaner.sh /data/adb/modules/cleaner/cleaner.sh
-chmod 755 /data/adb/modules/cleaner/cleaner.sh
+if [ ! -f /data/adb/modules/cleaner/cleaner.sh ]; then
+    cp $MODDIR/cleaner.sh /data/adb/modules/cleaner/cleaner.sh
+    chmod 755 /data/adb/modules/cleaner/cleaner.sh
+fi
