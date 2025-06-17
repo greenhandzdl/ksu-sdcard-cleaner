@@ -1,6 +1,0 @@
-[settings]
-# 白名单目录（用空格分隔）
-whitelist = "Alarms Android Audiobooks DCIM Documents Download Movies Music Pictures Podcasts Recordings Ringtones"
-# 定时任务设置（crontab格式）
-cron = "0 * * * *"
-web_port = 20256     # WebUI监听端口 [[2]]

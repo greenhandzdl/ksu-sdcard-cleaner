@@ -1,3 +1,5 @@
+# Archived Repository
+Please refer to the [repo](https://github.com/HChenX/RegularlyClean).
 ```
 .
 ├── LICENSE                  # 开源许可证
@@ -7,9 +9,8 @@
     ├── module.prop          # 模块信息配置
     ├── config.toml          # 配置文件
     ├── scripts/             # 核心脚本目录
-    │   ├── post-fs-data.sh  # 模块初始化脚本
+    │   ├── service.sh       # 模块初始化脚本
     │   ├── cleaner.sh       # 核心清理脚本
-    │   ├── init.sh          # 生命周期管理脚本
     │   └── uninstall.sh     # 卸载清理脚本
     └── webui/               # Web界面
         └── index.html       # 日志查看WebUI
